@@ -110,25 +110,28 @@ void cardPin()
     int pinInp;
     int pin = 1111;
     int errC = 3;
-    bool login;
+    bool login = false;
     cout << "Enter PIN: ";
     cin >> pinInp;
     while (pinInp != pin && errC != 0)
     {
-        if (errC != 0)
-        {
+        
             cout << "WRONG PIN PLEASE TRY AGAIN. " << errC << " ATTEMPTS REMAIN" << endl;
             errC = errC - 1;
+            cout << errC << endl;
             cout << "Enter Pin: ";
             cin >> pinInp;
-       }
-        else {
+            
+       
+        if(errC == 0 && pinInp != pin)
+        {
             login = false;
         }
-            if (errC > 1)
-            {
-                login = true;
-            }
+        else if (errC >= 0 && pinInp == pin)
+        {
+            login = true;
+        }
+            
     }
     if (login == true)
     {
