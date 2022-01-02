@@ -29,7 +29,7 @@ int main()
     atm.cardPin(); // this also displays menu
     cout << endl;
     
-    
+
     }
   
     
